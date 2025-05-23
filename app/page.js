@@ -108,10 +108,10 @@ export default function Home() {
               </a>
             </div>
             {/* Mobile Menu Button */}
-            <div className="sm:hidden flex items-center">
+            <div className="flex sm:hidden items-center">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-white p-2 rounded-md hover:bg-blue-800 transition focus:outline-none"
+                className="text-white p-3 rounded-md hover:bg-blue-800 transition focus:outline-none focus:ring-2 focus:ring-red-400"
                 aria-label="Toggle menu"
               >
                 <i
