@@ -19,6 +19,7 @@ import {
   faEnvelope,
   faPhone,
   faClock,
+  faBowlFood,
   
 } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -87,6 +88,11 @@ export default function Home() {
       name: "Security Guards",
       icon: faShieldAlt,
       image: "/images/security-guard.jpg",
+    },
+    {
+      name: "Caterers",
+      icon: faBowlFood,
+      image: "/images/caterer.jpg",
     },
   ];
 
