@@ -4,6 +4,32 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBars,
+  faTimes,
+  faHome,
+  faLeaf,
+  faBuilding,
+  faHeart,
+  faShieldAlt,
+  faArrowRight,
+  faPaperPlane,
+  faMapMarkerAlt,
+  faEnvelope,
+  faPhone,
+  faClock,
+  
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faWhatsapp,
+  faFacebookF,
+  faTwitter,
+  faLinkedinIn,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+
+
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -39,28 +65,28 @@ export default function Home() {
   const services = [
     {
       name: "House Managers",
-      icon: "fas fa-home",
-      image: "/images/domestic-worker.jpg", // Adjust path based on your file name
+      icon: faHome,
+      image: "/images/house-manager.jpg",
     },
     {
       name: "Gardeners",
-      icon: "fas fa-leaf",
-      image: "/images/gardener.jpg", // Adjust path based on your file name
+      icon: faLeaf,
+      image: "/images/gardener.jpg",
     },
     {
       name: "Caretakers",
-      icon: "fas fa-building",
-      image: "/images/caretaker1.jpg", // Adjust path based on your file name
+      icon: faBuilding,
+      image: "/images/caretaker1.jpg",
     },
     {
       name: "Caregivers",
-      icon: "fas fa-heart",
-      image: "/images/caregiver1.jpg", // Adjust path based on your file name
+      icon: faHeart,
+      image: "/images/caregiver1.jpg",
     },
     {
       name: "Security Guards",
-      icon: "fas fa-shield-alt",
-      image: "/images/security-guard.jpg", // Adjust path based on your file name
+      icon: faShieldAlt,
+      image: "/images/security-guard.jpg",
     },
   ];
 
@@ -104,7 +130,8 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition flex items-center"
               >
-                <i className="fab fa-whatsapp mr-2"></i> Chat on WhatsApp
+                <FontAwesomeIcon icon={faWhatsapp} className="mr-2" /> Chat on
+                WhatsApp
               </a>
             </div>
             {/* Mobile Menu Button */}
@@ -114,13 +141,10 @@ export default function Home() {
                 className="text-white p-3 rounded-md hover:bg-blue-800 transition focus:outline-none focus:ring-2 focus:ring-red-400"
                 aria-label="Toggle menu"
               >
-                <i
-                  className={
-                    isMenuOpen
-                      ? "fas fa-times text-3xl"
-                      : "fas fa-bars text-3xl"
-                  }
-                ></i>
+                <FontAwesomeIcon
+                  icon={isMenuOpen ? faTimes : faBars}
+                  className="text-3xl"
+                />
               </button>
             </div>
           </div>
@@ -156,15 +180,16 @@ export default function Home() {
                 >
                   Contact
                 </Link>
-                <a
+                <Link
                   href="https://wa.me/254797349201"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition text-center text-lg font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <i className="fab fa-whatsapp mr-2"></i> Chat on WhatsApp
-                </a>
+                  <FontAwesomeIcon icon={faWhatsapp} className="mr-2" /> Chat on
+                  WhatsApp
+                </Link>
               </div>
             </div>
           )}
@@ -185,20 +210,20 @@ export default function Home() {
             and more in Juja Town, 24/7.
           </p>
           <div className="mt-8 flex justify-center space-x-4">
-            <a
+            <Link
               href="#contact"
               className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 transition shadow-lg"
             >
               Get Started <i className="fas fa-arrow-right ml-2"></i>
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://wa.me/254797349201"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-500 text-white px-8 py-3 rounded-full hover:bg-green-600 transition shadow-lg flex items-center"
             >
               <i className="fab fa-whatsapp mr-2"></i> WhatsApp Us
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -222,24 +247,27 @@ export default function Home() {
                   height={160}
                   className="w-full h-40 object-cover rounded-t-xl"
                 />
-                <i
-                  className={`${service.icon} text-4xl text-blue-900 mt-4 mb-2`}
-                ></i>
+                <FontAwesomeIcon
+                  icon={service.icon}
+                  className="text-4xl text-blue-900 mt-4 mb-2"
+                />
                 <h3 className="text-xl font-semibold text-gray-800">
                   {service.name}
                 </h3>
                 <p className="mt-2 text-gray-600">
                   Expert {service.name.toLowerCase()} tailored to your needs.
                 </p>
-                <a
+                <Link
                   href="#contact"
                   className="mt-4 inline-block text-red-600 hover:text-red-700 font-medium"
                 >
-                  Learn More <i className="fas fa-arrow-right ml-1"></i>
-                </a>
+                  Learn More{" "}
+                  <FontAwesomeIcon icon={faArrowRight} className="ml-1" />
+                </Link>
               </div>
             ))}
           </div>
+          {/* Call to Action */}
           <div className="text-center mt-10">
             <a
               href="#contact"
@@ -288,20 +316,26 @@ export default function Home() {
                 Contact Information
               </h3>
               <p className="mt-4 text-gray-600 flex items-center">
-                <i className="fas fa-map-marker-alt text-red-600 mr-3"></i> Juja
-                Town
+                <FontAwesomeIcon
+                  icon={faMapMarkerAlt}
+                  className="text-red-600 mr-3"
+                />{" "}
+                Juja Town
               </p>
               <p className="mt-2 text-gray-600 flex items-center">
-                <i className="fas fa-envelope text-red-600 mr-3"></i>{" "}
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  className="text-red-600 mr-3"
+                />{" "}
                 jobconnectagency30@gmail.com
               </p>
               <p className="mt-2 text-gray-600 flex items-center">
-                <i className="fas fa-phone text-red-600 mr-3"></i> 0797 349 201
-                or 0781 594 646
+                <FontAwesomeIcon icon={faPhone} className="text-red-600 mr-3" />{" "}
+                0797 349 201 or 0781 594 646
               </p>
               <p className="mt-2 text-gray-600 flex items-center">
-                <i className="fas fa-clock text-red-600 mr-3"></i> Open Monday -
-                Sunday, 24/7
+                <FontAwesomeIcon icon={faClock} className="text-red-600 mr-3" />{" "}
+                Open Monday - Sunday, 24/7
               </p>
               <a
                 href="https://wa.me/254797349201"
@@ -309,7 +343,8 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition shadow-lg"
               >
-                <i className="fab fa-whatsapp mr-2"></i> Chat on WhatsApp
+                <FontAwesomeIcon icon={faWhatsapp} className="mr-2" /> Chat on
+                WhatsApp
               </a>
             </div>
             <div>
@@ -348,7 +383,8 @@ export default function Home() {
                   type="submit"
                   className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 transition shadow-lg"
                 >
-                  Send Message <i className="fas fa-paper-plane ml-2"></i>
+                  Send Message{" "}
+                  <FontAwesomeIcon icon={faPaperPlane} className="ml-2" />
                 </button>
                 {status && (
                   <p className="mt-2 text-sm text-gray-600">{status}</p>
@@ -365,13 +401,16 @@ export default function Home() {
           <p>© 2025 Job Connect Agency. All rights reserved.</p>
           <div className="mt-4 flex justify-center space-x-6">
             <a href="#" className="hover:text-red-400 transition">
-              <i className="fab fa-facebook-f text-lg"></i>
+              <FontAwesomeIcon icon={faFacebookF} className="text-lg" />
             </a>
             <a href="#" className="hover:text-red-400 transition">
-              <i className="fab fa-twitter text-lg"></i>
+              <FontAwesomeIcon icon={faTwitter} className="text-lg" />
             </a>
             <a href="#" className="hover:text-red-400 transition">
-              <i className="fab fa-linkedin-in text-lg"></i>
+              <FontAwesomeIcon icon={faInstagram} className="text-lg" />
+            </a>
+            <a href="#" className="hover:text-red-400 transition">
+              <FontAwesomeIcon icon={faLinkedinIn} className="text-lg" />
             </a>
           </div>
         </div>

@@ -2,6 +2,9 @@
   "name": "job-connect-agency",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
+  "description": "A job connection platform for agencies and job seekers.",
+  "author": "Peter Rigii",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +12,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "next": "15.1.8",
     "nodemailer": "^7.0.3",
     "react": "^19.0.0",
