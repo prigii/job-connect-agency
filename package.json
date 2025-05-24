@@ -2,7 +2,6 @@
   "name": "job-connect-agency",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "description": "A job connection platform for agencies and job seekers.",
   "author": "Peter Rigii",
   "scripts": {
