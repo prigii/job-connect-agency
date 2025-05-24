@@ -74,14 +74,14 @@ export default function Home() {
       image: "/images/gardener.jpg",
     },
     {
+      name: "Caregivers",
+      icon: faHeart,
+      image: "/images/caregiver.jpg",
+    },
+    {
       name: "Caretakers",
       icon: faBuilding,
       image: "/images/caretaker1.jpg",
-    },
-    {
-      name: "Caregivers",
-      icon: faHeart,
-      image: "/images/caregiver1.jpg",
     },
     {
       name: "Security Guards",
@@ -245,7 +245,7 @@ export default function Home() {
                   alt={service.name}
                   width={400}
                   height={160}
-                  className="w-full h-40 object-cover rounded-t-xl"
+                  className="w-full object-cover rounded-t-xl"
                 />
                 <FontAwesomeIcon
                   icon={service.icon}
